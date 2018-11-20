@@ -1,0 +1,36 @@
+schema {
+    query: QueryType
+}
+
+type QueryType {
+    students(id: ID!): Student
+    lecturer(id: ID!): Lecturer 
+}
+
+enum Class {
+    IT
+    ACCOUNTING_FINANCE
+    MARKETING
+}
+
+interface Person {
+    id: ID!
+    name: String!
+    age: Int!
+}
+
+type Student implements Person {
+    id: ID!
+    name: String!
+    age: Int!
+    enrolledIn: [Class]! # a Student can enrol in multiple classes
+}
+
+type Lecturer implements Person {
+    id: ID!
+    name: String!
+    age: Int!
+    teaches: [Student]! # teaches many students
+    lectures: Class! # for simplicity sake only allowed to lecture 1 class
+    isProfessor: Boolean
+}
