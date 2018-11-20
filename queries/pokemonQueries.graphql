@@ -1,0 +1,41 @@
+{
+  pokemon(name: "Pikachu") {
+    id
+    name
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      maximum
+      minimum
+    }
+    classification
+    types
+    resistant
+    attacks {
+      fast {
+        name
+        type
+        damage
+      }
+      special {
+        name
+        type
+        damage
+      }
+    }
+    weaknesses
+    fleeRate
+    maxHP
+    evolutions {
+      name
+    }
+    maxCP
+    evolutionRequirements {
+      name
+      amount
+    }
+    image
+  }
+}
